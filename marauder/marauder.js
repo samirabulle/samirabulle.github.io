@@ -2,11 +2,16 @@ var map;
 var subscribeKey;
 var publishKey;
 var pubnub;
+var marker;
 
 function initMap() {
+	var uwaterloo = {lat: 43.4723, lng: -80.5449};
 	map = new google.maps.Map(document.getElementById('map'), {
-		center: {lat: 43.4723, lng: -80.5449},
-		zoom: 18
+		center: uwaterloo,
+		zoom: 17
+	});
+	marker = new google.maps.Marker({
+		map: map
 	});
 	console.log("Map is drawn.");
 }
@@ -26,6 +31,11 @@ var main = function() {
 	        console.log(statusEvent.category);
 	    },
 	    message: function(message) {
+	    	location = message.message;
+	    	marker = new google.maps.Marker({
+	    		position: location,
+				map: map
+			});
 	    	console.log("Message:", message);
 	    }
 	});
