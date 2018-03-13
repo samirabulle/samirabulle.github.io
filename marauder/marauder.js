@@ -33,10 +33,7 @@ var main = function() {
 	    message: function(message) {
 	    	latitude = parseFloat(message.message["lat"]);
 	    	longitude = parseFloat(message.message["lng"]);
-	    	marker = new google.maps.Marker({
-	    		position: {lat: latitude, lng: longitude},
-				map: map
-			});
+	    	marker.setPosition({lat: latitude, lng: longitude});
 	    	console.log("Message:", message);
 	    },
 	    error : function (error) {
