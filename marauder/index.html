@@ -6,10 +6,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.20.2.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBO0kKZFZ02rwn-2aiLrtclVZCRLKnoIyk&callback=initMap" defer></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBO0kKZFZ02rwn-2aiLrtclVZCRLKnoIyk&callback=initMap" async defer></script>
 		<script type="text/javascript" src="marauder.js"></script>
+		<style>
+		  #map {
+		    height: 100%;
+		  }
+		  html, body {
+		    height: 100%;
+		    margin: 0;
+		    padding: 0;
+		  }
+		</style>
 	</head>
 	<body>
-		<div id="map" style="height: 100%; width: 100%"></div>
+		<div id="map"></div>
 	</body>
 </html>

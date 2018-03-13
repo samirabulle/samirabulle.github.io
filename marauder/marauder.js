@@ -6,7 +6,7 @@ var pubnub;
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: 43.4723, lng: -80.5449},
-		zoom: 4
+		zoom: 18
 	});
 	console.log("Map is drawn.");
 }
