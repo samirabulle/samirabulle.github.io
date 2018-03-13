@@ -10,6 +10,9 @@ var pubnub = new PubNub({
 pubnub.addListener({
 	status: function(statusEvent) {
         console.log(statusEvent.category);
+    },
+    message: function(message) {
+    	console.log("Message:", message);
     }
 })
 
