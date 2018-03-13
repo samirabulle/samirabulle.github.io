@@ -31,17 +31,22 @@ var main = function() {
 	        console.log(statusEvent.category);
 	    },
 	    message: function(message) {
-	    	location = message.message;
+	    	latitude = parseFloat(message.message["lat"]);
+	    	longitude = parseFloat(message.message["lng"]);
 	    	marker = new google.maps.Marker({
-	    		position: location,
+	    		position: {lat: latitude, lng: longitude},
 				map: map
 			});
 	    	console.log("Message:", message);
+	    },
+	    error : function (error) {
+	        // Handle error here
+	        console.log(JSON.stringify(error));
 	    }
 	});
 
 	pubnub.subscribe({
-	    channels: ['LOCATION'],
+	    channels: ['LOCATION']
 	});
 }
 
